@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using System.Net.Http.Json;
 
 namespace CoffeeBrowser.Maui.Data
 {
-
+    
     internal class CoffeeService : ICoffeeService
     {
-        public async Task<IEnumerable<Coffee>> LoadCofeesAsync()
+        private readonly HttpClient _httpClent = new();
+        public async Task<IEnumerable<Coffee>?> LoadCofeesAsync()
         {
+            //var coffees = await _httpClent.GetFromJsonAsync<IEnumerable<Coffee>>(
+            //    "");
             var coffees = new[]
             {
                 new Coffee("Cappuccino", "Coffee with milk foam"),

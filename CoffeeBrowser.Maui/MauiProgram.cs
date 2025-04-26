@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CoffeeBrowser.Maui.Data;
+using Microsoft.Extensions.Logging;
 
 namespace CoffeeBrowser.Maui
 {
@@ -20,6 +21,8 @@ namespace CoffeeBrowser.Maui
     		builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddTransient<ICoffeeService, CoffeeService>();
 
             return builder.Build();
         }
