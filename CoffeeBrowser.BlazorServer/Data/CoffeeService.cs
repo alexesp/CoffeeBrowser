@@ -2,15 +2,23 @@
 
 using System.Net.Http.Json;
 
-namespace CoffeeBrowser.Maui.Data
+namespace CoffeeBrowser.BlazorServer.Data
 {
     
     public class CoffeeService : ICoffeeService
     {
-        private readonly HttpClient _httpClent = new();
+        //private readonly HttpClient _httpClent = new();
+        private readonly IHttpClientFactory _factory;
+
+        public CoffeeService(IHttpClientFactory factory)
+        {
+            _factory = factory;
+        }
         public async Task<IEnumerable<Coffee>?> LoadCofeesAsync()
         {
-            //var coffees = await _httpClent.GetFromJsonAsync<IEnumerable<Coffee>>(
+
+           using var httpClient = _factory.CreateClient();
+            //var coffees = await httpClent.GetFromJsonAsync<IEnumerable<Coffee>>(
             //    "");
             var coffees = new[]
             {

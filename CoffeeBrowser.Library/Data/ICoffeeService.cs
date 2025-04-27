@@ -1,6 +1,6 @@
 ﻿namespace CoffeeBrowser.Library.Data
 {
-    internal interface ICoffeeService
+    public interface ICoffeeService
     {
         Task<IEnumerable<Coffee>?> LoadCofeesAsync();
     }
