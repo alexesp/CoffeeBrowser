@@ -41,7 +41,14 @@ public class CustomAuthStateProvider : AuthenticationStateProvider
 
                 Return a new ClaimsPrincipal based on a new ClaimsIdentity.
             */
-            var identity = new ClaimsIdentity("Custom");
+
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, "Admin"),
+                new Claim(ClaimTypes.Role, "Admin")
+            };
+
+            var identity = new ClaimsIdentity(claims, "Custom");
            
             var authenticatedUser = new ClaimsPrincipal(identity);
 

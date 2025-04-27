@@ -33,10 +33,19 @@
 .bi {
     display: inline-block;
     position: relative;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1rem;
+    height: 1rem;
     margin-right: 0.75rem;
     top: -1px;
+    background-size: cover;
+}
+.bi2 {
+    display: inline-block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0rem;
+    top: -7px;
     background-size: cover;
 }
 

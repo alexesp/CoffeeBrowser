@@ -61,10 +61,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Blazor.Bootstrap.Icons" Version="1.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.4" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+        <PackageReference Include="Rd.BlazorIcon.Bootstrap" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>
