@@ -3,14 +3,15 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Security.Claims;
+using CoffeeBrowser.Library.Auth;
 
 namespace CoffeeBrowser.Maui.Auth
 {
-    
 
 
 
-public class CustomAuthStateProvider : AuthenticationStateProvider
+
+    public class CustomAuthStateProvider : AuthenticationStateProvider, ICustomAuthStateProvider
     {
         private ClaimsPrincipal currentUser = new ClaimsPrincipal(new ClaimsIdentity());
 
@@ -49,7 +50,7 @@ public class CustomAuthStateProvider : AuthenticationStateProvider
             };
 
             var identity = new ClaimsIdentity(claims, "Custom");
-           
+
             var authenticatedUser = new ClaimsPrincipal(identity);
 
             return Task.FromResult(authenticatedUser);

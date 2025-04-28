@@ -1,6 +1,5 @@
 ﻿<CascadingAuthenticationState>
-<Router AppAssembly="@typeof(MauiProgram).Assembly"
-        AdditionalAssemblies="new[]{typeof(CofeesComponent).Assembly}">
+<Router AddAssemblies="new[]{typeof(CofeesComponent).Assembly}">
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
